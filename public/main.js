@@ -1,3 +1,5 @@
+const socket = io(); // konekcija sa serverom
+
 document.getElementById("sendBtn").addEventListener("click", async () => {
   const input = document.getElementById("messageInput");
   const message = input.value.trim();
@@ -12,9 +14,10 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
   });
 
   input.value = "";
-  loadMessages();
+  // Ne moraš više ručno pozivati loadMessages jer će real-time ažurirati
 });
 
+// Prvo učitavanje svih poruka
 async function loadMessages() {
   const res = await fetch("/api");
   const messages = await res.json();
@@ -22,11 +25,20 @@ async function loadMessages() {
   list.innerHTML = "";
 
   messages.forEach((msg) => {
-    const li = document.createElement("li");
-    const time = new Date(msg.timestamp).toLocaleString();
-    li.textContent = `[${time}] ${msg.message}`;
-    list.appendChild(li);
+    appendMessage(msg);
   });
 }
+
+function appendMessage(msg) {
+  const li = document.createElement("li");
+  const time = new Date(msg.timestamp).toLocaleString();
+  li.textContent = `[${time}] ${msg.message}`;
+  document.getElementById("messagesList").appendChild(li);
+}
+
+// Realtime: kada stigne nova poruka, odmah je prikaži
+socket.on("newMessage", (data) => {
+  appendMessage(data);
+});
 
 loadMessages();

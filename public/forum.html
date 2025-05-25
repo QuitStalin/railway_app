@@ -6,12 +6,14 @@
   </head>
   <body>
     <h1>Pošalji poruku</h1>
-    <input id="messageInput" placeholder="Upiši poruku..." />
+    <input id="messageInput" type="text" placeholder="Unesi poruku..." />
     <button id="sendBtn">Pošalji</button>
 
-    <h2>Poruke:</h2>
     <ul id="messagesList"></ul>
 
+    <!-- socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- naš JS -->
     <script src="main.js"></script>
   </body>
 </html>
