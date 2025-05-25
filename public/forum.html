@@ -5,15 +5,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Pošalji poruku</h1>
-    <input id="messageInput" type="text" placeholder="Unesi poruku..." />
-    <button id="sendBtn">Pošalji</button>
+    <h1>Forum poruke</h1>
 
     <ul id="messagesList"></ul>
 
-    <!-- socket.io -->
+    <input id="messageInput" type="text" placeholder="Unesi poruku" />
+    <button id="sendBtn">Pošalji</button>
+
     <script src="/socket.io/socket.io.js"></script>
-    <!-- naš JS -->
     <script src="main.js"></script>
   </body>
 </html>
