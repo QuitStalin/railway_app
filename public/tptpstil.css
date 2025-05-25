@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header  header   header"
+    "left    main     right"
+    "footer  footer   footer";
+  grid-template-columns: 200px 1fr 300px;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.grid-container.no-sidebars {
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  grid-area: header;
+  background-color: #003366;
+}
+.left {
+  grid-area: left;
+  background-color: #003366;
+  padding: 10px;
+  text-align: center;
+}
+main {
+  grid-area: main;
+  background-color: #002447;
+  overflow-y: scroll;
+}
+.right {
+  grid-area: right;
+  background-color: #003366;
+  padding: 10px;
+  text-align: center;
+}
+footer {
+  grid-area: footer;
+  background-color: #002447;
+  text-align: center;
+  padding: 15px;
+}
+
+#header-top {
+  padding: 20px;
+}
+
+#header-top h1 {
+  text-align: center;
+  margin: auto;
+  margin-top: 5px;
+  width: fit-content;
+}
+
+#social-media img {
+  width: 30px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+#navbar {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0px;
+  background-color: #002447;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+#navbar li {
+  padding: 20px;
+}
+
+#navbar li:hover {
+  background-color: #003366;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.student {
+  background-color: #003366;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.student img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.partner {
+  padding: 10px;
+  text-align: left;
+  background-color: #002447;
+  margin-top: 10px;
+}
+
+.partner a,
+p {
+  color: white;
+  margin-top: 10px;
+}
+
+.promo {
+  margin-top: 10px;
+}
+
+.promo iframe {
+  margin-top: 10px;
+}
+
+.article {
+  padding: 20px;
+  background-color: #003366;
+  margin: 10px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.article img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4 / 3; /* ili 16 / 9, zavisno od formata slike koji želiš */
+  border-radius: 10px;
+}
+
+.article-text {
+  padding: 20px;
+}
+
+.article a {
+  background-color: #002447;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: block;
+  width: fit-content;
+}
+
+#savjeti,
+#smjerovi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.savjet,
+.smjer {
+  background-color: #003366;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(20% - 20px); /* 5 u redu kad je dovoljno prostora */
+  min-width: 250px; /* Minimalna širina da se ne zbiju */
+  flex-grow: 1;
+}
+
+.savjet h2,
+.smjer h3 {
+  text-align: center;
+}
+
+.savjet ul,
+.smjer ul {
+  margin-top: 10px;
+}
+
+.savjet li,
+.smjer li {
+  margin: 10px;
+}
+
+.smjer p {
+  margin-bottom: 10px;
+}
+#kontaktForma {
+  max-width: 500px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+form button {
+  padding: 10px;
+  background-color: #002447;
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+  color: white;
+  margin: auto;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Za mobitele */
+
+@media (max-width: 1100px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .left,
+  .right {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "main"
+      "left"
+      "right"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    height: auto;
+    background-color: #002447;
+  }
+
+  .left,
+  .right {
+    display: block;
+  }
+
+  .left {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .article {
+    flex-direction: column;
+  }
+
+  .article img {
+    width: 100%;
+    margin: auto;
+  }
+
+  #savjeti,
+  #smjerovi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .savjet,
+  .smjer {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .savjet h2,
+  .smjer h3 {
+    font-size: 1.3rem;
+  }
+
+  .savjet li,
+  .smjer li {
+    font-size: 0.95rem;
+  }
+
+  main {
+    overflow-y: visible !important;
+  }
+}
