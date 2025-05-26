@@ -405,7 +405,6 @@ form button,
     display: none;
     flex-direction: column;
     gap: 10px;
-    margin: 10px;
   }
 
   #navbar.show {
