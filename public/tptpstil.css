@@ -9,6 +9,7 @@ body {
   height: 100%;
   font-family: Arial, sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
 .grid-container {
@@ -88,16 +89,18 @@ footer {
 }
 
 #navbar li {
-  padding: 20px;
-}
-
-#navbar li:hover {
-  background-color: #003366;
+  padding: 0;
 }
 
 #navbar a {
+  display: block;
+  padding: 20px;
   text-decoration: none;
   color: white;
+}
+
+#navbar a:hover {
+  background-color: #003366;
 }
 
 .student {
@@ -380,4 +383,37 @@ form button,
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+}
+
+#menu-toggle {
+  display: none;
+  background-color: #002447;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#menu-toggle:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  #navbar {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+  }
+
+  #navbar.show {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
 }

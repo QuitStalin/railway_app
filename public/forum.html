@@ -26,6 +26,7 @@
             /></a>
           </nav>
           <h1>Fakultet elektrotehnike - Univerzitet u Tuzli</h1>
+          <button id="menu-toggle">☰ Meni</button>
           <ul id="navbar">
             <li><a href="start.html">Početna</a></li>
             <li><a href="savjeti.html">Savjeti</a></li>
@@ -60,5 +61,13 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+
+      toggleBtn.addEventListener("click", () => {
+        navbar.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>
