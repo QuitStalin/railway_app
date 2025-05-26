@@ -401,6 +401,10 @@ form button,
   cursor: pointer;
 }
 
+.fr {
+  float: right;
+}
+
 @media (max-width: 700px) {
   #navbar {
     display: none;
