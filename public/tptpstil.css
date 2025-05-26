@@ -138,6 +138,7 @@ p {
   margin: 10px;
   display: flex;
   border-radius: 10px;
+  flex-direction: column;
 }
 
 .article img {
@@ -211,14 +212,16 @@ form {
 }
 
 form input,
-form textarea {
+form textarea,
+#messageInput {
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 8px;
   border-radius: 5px;
   border: none;
 }
-form button {
+form button,
+#sendBtn {
   padding: 10px;
   background-color: #002447;
   border-radius: 10px;
@@ -227,6 +230,8 @@ form button {
   margin: auto;
   border: none;
   cursor: pointer;
+  width: 200px;
+  height: 40px;
 }
 
 .error {
@@ -275,10 +280,6 @@ form button {
     border-top-right-radius: 20px;
   }
 
-  .article {
-    flex-direction: column;
-  }
-
   .article img {
     width: 100%;
     margin: auto;
@@ -308,5 +309,75 @@ form button {
 
   main {
     overflow-y: visible !important;
+    background-color: #002447;
+    min-height: 100vh; /* osigurava da ima bar visinu ekrana */
+    padding-bottom: 20px; /* da poruke ne budu zalijepljene za dno */
   }
+}
+
+/* Za forum */
+
+#messagesList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.message-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #003366;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.user-avatar {
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-time {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.message-text {
+  font-size: 1rem;
+  color: white;
+  word-wrap: break-word;
+}
+
+#forumInputDiv {
+  padding: 10px;
+  background-color: #003366;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#messageInput {
+  padding: 10px;
+  width: 100%;
+}
+
+#sendBtn {
+  margin: 0;
+}
+
+.maxw1200px {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
 }

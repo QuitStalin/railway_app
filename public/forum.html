@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="bs">
   <head>
-    <title>Simple Messages</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FET TPTP Projekat</title>
+    <link rel="stylesheet" href="tptpstil.css" />
   </head>
   <body>
-    <h1>Forum poruke</h1>
+    <div class="grid-container no-sidebars">
+      <header>
+        <div id="header-top">
+          <nav id="social-media">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/FETuzla/?locale=hr_HR"
+              ><img src="img/facebook-icon.png" alt="facebook-link"
+            /></a>
+            <a target="_blank" href="https://www.instagram.com/fetuzla/?hl=en"
+              ><img src="img/instagram-icon.png" alt="instagram-link"
+            /></a>
+            <a
+              target="_blank"
+              href="https://ba.linkedin.com/company/university-of-tuzla"
+              ><img src="img/linkedin-icon.png" alt="linkedin-link"
+            /></a>
+          </nav>
+          <h1>Fakultet elektrotehnike - Univerzitet u Tuzli</h1>
+          <ul id="navbar">
+            <a href="start.html"><li>Početna</li></a>
+            <a href="savjeti.html"><li>Savjeti</li></a>
+            <a href="odsjeki.html"><li>Odsjeci</li></a>
+            <a href="forum.html"><li>Forum</li></a>
+          </ul>
+        </div>
+      </header>
 
-    <ul id="messagesList"></ul>
+      <main>
+        <div class="maxw1200px">
+          <div class="article">
+            <h1>Dobrodošli na Forum!</h1>
+            Ova stranica služi kao prostor za razmjenu mišljenja, postavljanje
+            pitanja i dijeljenje korisnih informacija među posjetiocima. Bilo da
+            želiš podijeliti savjet, postaviti pitanje ili započeti raspravu –
+            ovdje si na pravom mjestu. Poruke su javne i vidljive svima, zato
+            piši jasno, pristojno i s poštovanjem prema drugim korisnicima.
+          </div>
 
-    <input id="messageInput" type="text" placeholder="Unesi poruku" />
-    <button id="sendBtn">Pošalji</button>
+          <ul id="messagesList"></ul>
+
+          <div id="forumInputDiv">
+            <input id="messageInput" type="text" placeholder="Unesi poruku" />
+            <button id="sendBtn">Pošalji</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>Dizajnirali: Knežević Sanjin i Kopić Amina 2025. godine.</footer>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
