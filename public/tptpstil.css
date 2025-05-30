@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;
   color: white;
   overflow-x: hidden;
+  background-color: #002447;
 }
 
 .grid-container {
@@ -263,6 +264,12 @@ form button,
     grid-template-rows: auto auto auto auto auto;
     height: auto;
     background-color: #002447;
+  }
+
+  main {
+    overflow-y: visible !important;
+    background-color: #002447;
+    padding-bottom: 20px; /* da poruke ne budu zalijepljene za dno */
   }
 
   .left,
